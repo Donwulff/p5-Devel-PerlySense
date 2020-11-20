@@ -682,7 +682,7 @@ sub processFilesInDirs {
 
     my @aFile;
     find({
-        wanted => sub { /\.pm$/ and push(@aFile, file($_)->absolute . ""); },
+        wanted => sub { (/\.pm$/ or /\.\/[a-z0-9_]+$/) and push(@aFile, file($_)->absolute . ""); },
         no_chdir => 1,
     }, @$raDir);
 

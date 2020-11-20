@@ -719,7 +719,8 @@ Return array with file names with perl source code in the project.
 =cut
 sub aFileSourceCode {
     return File::Find::Rule
-        ->name("*.pm", "*.pl")
+        ->name("*.pm", "*.pl", qr/^[a-z0-9_\/]+$/)
+        ->file
         ->in( $self->aDirIncAbsolute );
 }
 
