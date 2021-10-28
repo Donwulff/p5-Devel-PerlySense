@@ -33,7 +33,7 @@ use Cwd;
 
 use Data::Dumper;
 use Devel::TimeThis;
-
+use Text::Table;
 
 main();
 
@@ -145,6 +145,11 @@ sub main_perly_sense {
             print $oEditor->formatOutputDataStructure(
                 rhData => { callers => $callSites },
             );
+
+            my $tb = Text::Table->new(keys %{$callSites->[0]});
+            my @row = map {[ values %{$_} ]} @{$callSites};
+            $tb->load(@row);
+            print "\n$tb";
         };
         if(my $err = $@) {
             chomp($err);
