@@ -1,0 +1,16 @@
+For RHEL6, following packages were found in repository, the rest from CPAN.
+perl-Digest-SHA1 perl-File-Find-Rule perl-File-Slurp perl-Spiffy perl-Test-Exception perl-YAML-Tiny
+
+Dependency check gives:
+perl-Class-MethodMaker perl-Digest-SHA perl-Exception-Class perl-ExtUtils-MakeMaker perl-File-Find-Rule perl-File-Slurp perl-IO-String perl-List-MoreUtils perl-Module-Pluggable perl-Module-Runtime perl-Params-Util perl-Perl-Critic perl-PPI perl-Spiffy perl-Sub-Exporter perl-Test-Differences perl-Test-Exception perl-Time-HiRes perl-YAML-Tiny
+
+CPAN:
+sudo cpan Path::Class
+sudo cpan Cache::FileCache
+sudo cpan Path::Tiny
+sudo cpan File::chdir
+sudo cpan Moo
+sudo cpan List::AllUtils
+sudo cpan Tree::Parser
+sudo cpan Graph::Easy
+sudo cpan Text::Table
