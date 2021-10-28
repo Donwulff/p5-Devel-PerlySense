@@ -2770,7 +2770,9 @@ sub raCallSiteForMethod {
         my $oDocument;
         for my $line (split("\n", $source)) {
             $row++;
-            $line =~ m/ -> \s* $nameMethod \b /x or next;
+#            $line =~ m/ -> \s* $nameMethod \b /x or next;
+            # Perl would allow others chars, but shouldn't be used
+            $line =~ m/ [^a-zA-Z0-9_^]+ \s* $nameMethod \b /x or next;
             $line =~ m/ ^ \s* \# /x and next; # No comments
             $oDocument ||= $self->oDocumentParseFile($file) or last;
 
